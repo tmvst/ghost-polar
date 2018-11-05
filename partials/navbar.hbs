@@ -1,0 +1,17 @@
+<nav id="navigation" class="navbar">
+	<div class="navbar__wrapper">
+		{{#if @blog.logo}}
+		<div class="navbar__logo">
+			<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
+			<span class="navbar__logo__blog">Blog</span>
+		</div>
+		{{/if}}
+		{{#if @blog.navigation}}
+		<ul class="navbar__menu">
+			{{#foreach @blog.navigation}}
+			<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{this.url}}">{{label}}</a></li>
+			{{/foreach}}
+		</ul>
+		{{/if}}
+	</div>
+</nav>

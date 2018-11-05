@@ -1,0 +1,33 @@
+{{> "navbar"}}
+
+{{!< default}} <div id="index" class="container">
+
+	<main class="content content--left" role="main">
+
+		{{> "loop"}}
+
+	</main>
+
+	<aside class="sidebar">
+		<div class="author">
+
+			{{#primary_author}}
+			<a href="{{url}}">{{name}}</a>
+			<span class="bio">{{bio}}</span>
+			{{/primary_author}}
+
+		</div>
+
+		<h3>Subscribe for updates</h3>
+		<p>Tips for feedback management, behind the scenes of building FeedBear, interesting reports. No spam ever.</p>
+
+		<form class="newsletter-form" action="https://tinyletter.com/feedbear" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/feedbear', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+			<label for="tlemail">Your email address</label>
+			<input type="email" name="email" id="tlemail" class="newsletter-form__input">
+			<input type="hidden" value="1" name="embed">
+			<input type="submit" value="Subscribe" class="newsletter-form__submit">
+		</form>
+
+	</aside>
+
+	</div>
