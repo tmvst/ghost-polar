@@ -1,0 +1,267 @@
+.navbar {
+  background-color: white;
+  width: 100%;
+  height: 72px;
+}
+
+.navbar__wrapper {
+  max-width: 1140px;
+  width: 100%;
+  height: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__menu {
+  list-style-type: none;
+  display: block;
+  padding-left: 0;
+  margin: 0;
+  font-size: 16px;
+
+  a {
+    border: 1px solid #a5a5a5;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    font-weight: normal;
+    color: #737373;
+    font-size: 0.9em;
+    font-family: $sans-serif-font-family;
+  }
+
+  a:hover {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+
+  li {
+    display: inline-block;
+
+    &:before {
+      content: none;
+    }
+  }
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo img {
+  margin: 0;
+  width: 160px;
+  margin-right: 1rem;
+}
+
+.navbar__logo__blog {
+  border-left: 1px solid #d0d0d0;
+  padding-left: 1rem;
+  color: #454545;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-top: 3px;
+}
+
+/* ==========================================================================
+	Navigation
+	========================================================================== */
+
+#navigation {
+}
+.nav-button {
+  position: fixed;
+  top: 0;
+  margin: 1em;
+  z-index: 200;
+}
+.nav-button#home-button {
+  left: 0;
+}
+.nav-button#menu-button {
+  right: 0;
+}
+.nav-button a {
+  display: block;
+  height: 1.5em;
+  margin-bottom: 1em;
+  padding: 0.5em 1.25em;
+  border: 1px solid $color-blue-80;
+  font-family: neue-haas-grotesk-text, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.667em;
+  text-shadow: none;
+  color: $color-blue-60;
+  cursor: pointer;
+  background: $color-white;
+  transition: color, border-color ease 0.3s;
+  border-radius: 2em;
+}
+.nav-button a:hover,
+.nav-button a:focus {
+  color: $primary-color;
+  border-color: $primary-color;
+}
+.cover-active .nav-button a {
+  color: $color-white;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+.cover-active .nav-button a:hover,
+.cover-active .nav-button a:focus {
+  color: $color-white;
+  border-color: $color-white;
+}
+.nav-button a i {
+  display: inline-block;
+  color: inherit;
+}
+.nav-button a i:before {
+  position: relative;
+  width: auto;
+  margin: auto;
+}
+
+/* ==========================================================================
+	Menu
+	========================================================================== */
+
+#menu {
+  position: fixed;
+  width: 16em;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: $color-gray-95;
+  border-left: 1px solid $color-gray-90;
+  z-index: 400;
+  overflow: hidden;
+  font-family: neue-haas-grotesk-text, sans-serif;
+  box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.1);
+  transform: translate3d(16em, 0, 0);
+  transition: all ease-out 0.25s;
+}
+.menu-active #menu {
+  transform: translate3d(0, 0, 0);
+}
+#menu .close-button {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  border: 1px solid $color-blue-80;
+  color: transparent;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  border-radius: 2em;
+  box-sizing: border-box;
+  z-index: 500;
+}
+#menu .close-button:hover,
+#menu .close-button:focus {
+  transform: rotate(180deg);
+  border-color: $primary-color;
+}
+#menu .close-button:after,
+#menu .close-button:before {
+  position: absolute;
+  width: 1em;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.5em;
+  content: "";
+  background: $color-blue-60;
+  transition: all ease 0.3s;
+}
+#menu .close-button:hover:after,
+#menu .close-button:hover:before,
+#menu .close-button:focus:after,
+#menu .close-button:focus:before {
+  background: $primary-color;
+}
+#menu .close-button:after {
+  transform: rotate(45deg);
+}
+#menu .close-button:before {
+  transform: rotate(-45deg);
+}
+#menu .nav-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+#menu .nav-label {
+  display: block;
+  padding: 1.667em 2em;
+  margin: 0;
+  opacity: 0.5;
+  font-size: 0.75em;
+  line-height: 2em;
+}
+#menu ul {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+#menu li {
+  position: relative;
+}
+#menu li:before {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 1.5em;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  background: rgba(0, 0, 0, 0.1);
+}
+#menu li:last-child:before {
+  display: none;
+}
+#menu li.active {
+}
+#menu li.active:after {
+  position: absolute;
+  content: "";
+  width: 0.2em;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: $primary-color;
+}
+#menu li a {
+  display: block;
+  padding: 1.25em 1.5em;
+  color: $color-blue-15;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 400;
+}
+#menu li a:hover,
+#menu li a:focus {
+  color: $color-black;
+  background: rgba(0, 0, 0, 0.05);
+}
+#menu li a i {
+  position: relative;
+  top: -1px;
+  font-size: 0.8em;
+  color: inherit;
+}
+#menu li.active a {
+  color: $color-black;
+  font-weight: 500;
+}

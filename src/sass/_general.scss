@@ -1,0 +1,543 @@
+/* ==========================================================================
+	Basics
+	========================================================================== */
+
+@supports (flex-wrap: wrap) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  #wrapper {
+    flex: 1;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-feature-settings: "ss01", "calt", "tnum";
+
+  font-family: $serif-font-family;
+  color: $color-blue-30;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+input,
+button,
+select,
+textarea {
+  transition: all ease-out 0.2s;
+}
+
+input[type="submit"] {
+  font-family: $sans-serif-font-family;
+}
+
+a {
+  color: $color-blue-15;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all ease-out 0.2s;
+}
+a:hover,
+a:focus {
+  color: $color-black;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: inherit;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 0 0 2em;
+  padding: 0;
+  background: $color-gray-90;
+  border: 0;
+}
+
+blockquote {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  color: $color-blue-30;
+}
+blockquote p {
+  margin: 0 0 1rem;
+}
+blockquote p:first-child {
+  margin-top: 0;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+em,
+i {
+  font-style: italic;
+  color: $color-blue-15;
+}
+strong,
+b {
+  font-weight: 700;
+  color: $color-blue-15;
+}
+
+small {
+  font-size: 0.9em;
+  color: $color-blue-30;
+}
+
+dl {
+  margin: 0 0 2em;
+  padding-left: 30px;
+}
+dl dt {
+  font-family: neue-haas-grotesk-text, sans-serif;
+  font-weight: 500;
+  font-size: 0.75em;
+  line-height: 1.25em;
+  font-weight: 700;
+  color: $color-black;
+  margin-bottom: 0.334em;
+}
+dl dt:before {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1px;
+  margin-left: -30px;
+  margin-top: 0.5em;
+  background: $color-blue-80;
+}
+dl dd {
+  margin-left: 0;
+  margin-bottom: 1em;
+}
+
+mark {
+  background-color: $color-yellow-100;
+}
+code,
+tt {
+  position: relative;
+  margin: 0 0.334em;
+  padding: 0.334em 0.667em;
+  font-family: monospace, sans-serif;
+  font-size: 0.75em;
+  white-space: pre;
+  background: $color-gray-98;
+  border: 1px solid $color-gray-90;
+  top: -2px;
+}
+
+pre {
+  position: relative;
+  margin: 0 0 2em;
+  padding: 1em;
+  overflow: hidden;
+  font-family: monospace, sans-serif;
+  white-space: pre;
+  background: $color-gray-98;
+  border: 1px solid $color-gray-90;
+  box-sizing: border-box;
+}
+pre .lines {
+  position: absolute;
+  width: 2.667em;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 1.334em 0;
+  border-right: 1px solid $color-gray-90;
+  font-size: 0.75em;
+  line-height: 2em;
+  text-align: right;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.5);
+}
+pre .lines .line {
+  display: block;
+  padding-right: 0.334em;
+  color: $color-blue-30;
+}
+
+pre code,
+pre tt {
+  display: block;
+  position: static;
+  top: auto;
+  margin: -1.334em -1.334em -1.334em 1.334em;
+  padding: 1.334em;
+  overflow-x: auto;
+  font-size: 0.75em;
+  line-height: 2em;
+  white-space: pre;
+  background: transparent;
+  border: none;
+  vertical-align: inherit;
+}
+pre code.language-text {
+  overflow: hidden;
+  white-space: normal;
+  margin-left: -1.334em;
+}
+
+kbd {
+  display: inline-block;
+  margin-bottom: 0.5em;
+  padding: 1px 8px;
+  border: $color-gray-90 1px solid;
+  color: $color-blue-30;
+  text-shadow: $color-white 0 1px 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  background: $color-gray-98;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 $color-white inset;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 2em;
+  background-color: transparent;
+  border: 1px solid $color-gray-90;
+}
+
+table th,
+table td {
+  position: relative;
+  padding: 0.5em;
+  line-height: 0.95em;
+  text-align: left;
+  border: 1px solid $color-gray-90;
+}
+table th {
+  font-family: neue-haas-grotesk-text, sans-serif;
+  font-weight: 500;
+  font-size: 0.75em;
+  line-height: 1.25em;
+  padding: 0.667em;
+  color: $color-black;
+}
+table td:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -1px;
+  top: -1px;
+  padding: 1px;
+  z-index: -1;
+  content: "";
+  background: $color-gray-98;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 2em;
+}
+
+img[src$="#full"] {
+  max-width: none;
+  width: 100vw;
+  margin: 3em 0;
+}
+
+.kg-image-card {
+  margin: 0 0 2em;
+  max-width: none !important;
+
+  &.kg-width-wide {
+    max-width: 48em !important;
+    min-width: 100%;
+    width: 75vw;
+  }
+
+  &.kg-width-full {
+    max-width: none;
+    width: 100vw;
+    margin-top: 2em;
+  }
+
+  .kg-image {
+    margin: 0 auto;
+  }
+
+  figcaption {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    color: $color-blue-60;
+    text-align: center;
+    max-width: 32em;
+    margin: auto;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    padding: 0.667em 0;
+  }
+
+  .kg-image-full + figcaption {
+    margin-bottom: 1.334em;
+  }
+}
+
+.kg-gallery-card {
+  margin: 0 0 2em;
+  max-width: 48em !important;
+  min-width: 100%;
+  width: 75vw;
+
+  figcaption {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    color: $color-blue-60;
+    text-align: center;
+    max-width: 32em;
+    margin: auto;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    padding: 0.667em 0;
+  }
+}
+
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75em;
+}
+
+.kg-embed-card {
+  margin: 0 0 2em;
+
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.fluid-width-video-wrapper {
+  margin: 0 0 2em;
+}
+
+.clear {
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.avatar {
+  position: relative;
+  overflow: hidden;
+  background: $color-gray-95;
+  margin: 0;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    height: 50%;
+    bottom: 35%;
+    left: 25%;
+    border-radius: 100%;
+    background: $color-gray-90;
+  }
+
+  &:after {
+    width: 100%;
+    bottom: -25%;
+    left: 0;
+  }
+
+  img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ==========================================================================
+	Reading Progress
+	========================================================================== */
+
+.progress-container {
+  position: fixed;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: opacity ease-out 1s;
+}
+.progress-container.ready {
+  opacity: 0.2;
+}
+.progress-bar {
+  display: block;
+  width: 0;
+  height: 1px;
+  background: $primary-color;
+  box-shadow: 0 0 1px $primary-color, 0 0 3px $primary-color;
+}
+
+/* ==========================================================================
+	Footer
+	========================================================================== */
+
+#footer {
+  position: relative;
+  z-index: 20;
+  padding-bottom: 6em;
+}
+.credits {
+  font-size: 0.625em;
+  padding: 1.1em 0;
+  overflow: auto;
+  opacity: 0.5;
+  text-align: center;
+  width: 100%;
+}
+.home-template .credits {
+  text-align: left;
+}
+.credits a {
+  color: inherit;
+}
+
+/* ==========================================================================
+	Pagination
+	========================================================================== */
+
+.pagination {
+  position: relative;
+  height: 2em;
+  margin: 0;
+  padding: 2em 0;
+  font-family: neue-haas-grotesk-text, sans-serif;
+}
+.pagination:after {
+  position: absolute;
+  width: 36em;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  margin-left: -18em;
+  content: "";
+  background: $color-gray-90;
+}
+.pagination a {
+  position: relative;
+  display: block;
+  height: 1.334em;
+  margin: -1px 0;
+  padding: 0.667em 1em;
+  z-index: 100;
+  border: 1px solid $color-blue-80;
+  font-size: 0.75em;
+  text-align: center;
+  text-decoration: none;
+  color: $color-blue-60;
+  transition: all ease 0.3s;
+  border-radius: 2em;
+}
+.pagination .pagination-prev {
+  float: right;
+  padding-left: 1.334em;
+}
+.pagination .pagination-next {
+  float: left;
+  padding-right: 1.334em;
+}
+.pagination a:hover,
+.pagination a:focus {
+  color: $primary-color;
+  border-color: $primary-color;
+}
+.pagination .pagination-label {
+  position: relative;
+  top: -0.167em;
+  display: inline-block;
+  height: 1.334em;
+}
+.pagination a i {
+  position: relative;
+  width: auto;
+  margin: auto;
+  color: inherit;
+  font-size: 1.334em;
+}
+.pagination .pagination-info {
+  position: absolute;
+  width: 100%;
+  height: 2.667em;
+  left: 0;
+  z-index: 50;
+  display: block;
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.extra-pagination {
+  display: none;
+}
+.extra-pagination .pagination:after {
+  top: auto;
+  bottom: 0;
+}
+.paged .extra-pagination {
+  display: block;
+}
