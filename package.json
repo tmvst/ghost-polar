@@ -1,8 +1,8 @@
 {
-  "name": "feedbear",
-  "description": "Ghost Theme",
+  "name": "ghost-polar",
+  "description": "Minimal Ghost Theme",
   "demo": "https://blog.feedbear.com",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "ghost": ">=2.1.0"
   },
@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/zutrinken/attila.git"
+    "url": "https://github.com/tmvst/ghost-polar"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
