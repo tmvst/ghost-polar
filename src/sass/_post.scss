@@ -7,7 +7,10 @@
   }
 }
 
-.post-content h2 + p {
+.post-content h1 + p,
+.post-content h2 + p,
+.post-content h3 + p,
+.post-content h4 + p {
   margin-top: 0.5rem;
 }
 
