@@ -1,3 +1,11 @@
+# DISCLAIMER
+This is still a work in progress. It works and does not break, but the code is a little bit messy and needs some work on your part to set it up.
+
+## Things to consider
+- Fonts are currently loading from my Adobe Typekit, so they won't work on your site
+- Subscription box points to my TinyLetter. You certainly don't want to use that
+
+
 # Polar
 
 A content focused minimal responsive theme for [Ghost](http://github.com/tryghost/ghost/). Based on [Attila](https://github.com/zutrinken/attila) by Peter Amende.
